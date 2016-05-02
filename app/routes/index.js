@@ -7,11 +7,11 @@ function MakeDate(date){
 	var unix, natural;
 	
 	if(moment.unix(Number(date)).format("MMMM D, YYYY") !== "Invalid date"){
-		unix = date;
+		unix = Number(date);
 		natural = moment.unix(Number(date)).format("MMMM D, YYYY");
 	}
 	else if(moment(date, "MMMM D, YYYY").format("MMMM D, YYYY") !== "Invalid date"){
-		unix = moment(date, "MMMM D, YYYY").unix();	
+		unix = Number(moment(date, "MMMM D, YYYY").unix());	
 		natural =  date;
 	}
 	else{
